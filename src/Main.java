@@ -1,9 +1,20 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Phone phone = new Phone() {
+        // Número de telefone sem o código de país
+        String phoneNumber = "0000000000000"; // 13 dígitos, sem o código do país
 
+        // Chamando o método para formatar o número
+        String formattedNumber = formatPhoneNumber(phoneNumber);
+
+        // Adicionando o código de país
+        String finalFormattedNumber = "+55" + formattedNumber;
+
+        // Exibindo o número formatado com o código do país
+        System.out.println(finalFormattedNumber); // Exemplo de saída: +55 00 00000-0000
+
+        // Criando uma instância anônima de Phone, implementando todos os métodos das interfaces MusicPlayer e WebBrowser
+        Phone phone = new Phone() {
+            // Implementação dos métodos conforme o código anterior...
             @Override
             public void openBrowser() {
                 System.out.println("Abriu o navegador");
@@ -21,22 +32,22 @@ public class Main {
 
             @Override
             public void playMusic() {
-                System.out.println("Iniciou a reproducao da musica");
+                System.out.println("Iniciou a reprodução da música");
             }
 
             @Override
             public void pauseMusic() {
-                System.out.println("Pausou a musica");
+                System.out.println("Pausou a música");
             }
 
             @Override
             public void stopMusic() {
-                System.out.println("Parou a musica");
+                System.out.println("Parou a música");
             }
 
             @Override
             public void makeCall(String phoneNumber) {
-                System.out.println("Realizou uma chamada para o numero: " + phoneNumber);
+                System.out.println("Realizou uma chamada para o número: " + phoneNumber);
             }
 
             @Override
@@ -50,15 +61,34 @@ public class Main {
             }
         };
 
+        // Testando os métodos implementados
         phone.openBrowser();
         phone.search_query_String_("https://www.google.com.br");
         phone.closeBrowser();
         phone.playMusic();
         phone.pauseMusic();
         phone.stopMusic();
-        phone.makeCall("11999999999");
+        phone.makeCall(finalFormattedNumber); // Passando o número formatado com o código do país
         phone.receiveCall();
         phone.hangUp();
+    }
 
+    /**
+     * Formata um número de telefone no formato "00 00 00000-0000".
+     *
+     * @param phoneNumber o número de telefone sem formatação (apenas dígitos)
+     * @return o número de telefone formatado
+     */
+    public static String formatPhoneNumber(String phoneNumber) {
+        // Verifica se o número tem a quantidade certa de caracteres
+        if (phoneNumber.length() != 13) {
+            throw new IllegalArgumentException("Número de telefone inválido. Esperado 13 dígitos.");
+        }
+
+        // Formata o número no formato 00 00 00000-0000
+        return phoneNumber.substring(0, 2) + " " + // 00 (código do estado)
+                phoneNumber.substring(2, 4) + " " +  // 00 (DDD)
+                phoneNumber.substring(4, 9) + "-" +  // 00000
+                phoneNumber.substring(9);             // 0000
     }
 }

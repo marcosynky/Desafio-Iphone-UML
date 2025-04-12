@@ -3,10 +3,6 @@
  */
 public class Iphone {
 
-    //
-    // Fields
-    //
-
     public String model;
     public int batteryLevel;
 
@@ -14,15 +10,6 @@ public class Iphone {
     // Constructors
     //
     public Iphone () { };
-
-    //
-    // Methods
-    //
-
-
-    //
-    // Accessor methods
-    //
 
     /**
      * Set the value of model
@@ -56,16 +43,12 @@ public class Iphone {
         return batteryLevel;
     }
 
-    //
-    // Other methods
-    //
 
     /**
      */
     public void chargePhone()
     {
     }
-
 
     /**
      */

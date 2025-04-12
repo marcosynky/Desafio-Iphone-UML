@@ -1,25 +1,10 @@
 
 
-/**
- * Interface que define as funcionalidades de um telefone.
- * A interface herda as funcionalidades de MusicPlayer e WebBrowser.
- */
+
 public interface Phone extends MusicPlayer, WebBrowser {
+    void makeCall(String phoneNumber); // Passando o número formatado com o código do país
+    void receiveCall(); // Aceitou uma chamada
+    void hangUp(); // Encerrou a chamada
 
-    /**
-     * Realiza uma chamada telefônica para o número especificado.
-     *
-     * @param phoneNumber o número de telefone para o qual a chamada será feita.
-     */
-    void makeCall(String phoneNumber);
 
-    /**
-     * Aceita uma chamada recebida.
-     */
-    void receiveCall();
-
-    /**
-     * Encerra a chamada atual.
-     */
-    void hangUp();
 }
