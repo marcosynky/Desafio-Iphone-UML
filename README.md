@@ -46,6 +46,47 @@
 - Reprodução, pausa e interrupção de músicas.
 - Abertura de navegador, busca na web e fechamento do navegador.
 
+  ## Diagrama UML
+  classDiagram
+    class iPhone {
+        +String model
+        +int batteryLevel
+        +iPhone(model: String)
+        +chargePhone()
+        +showBatteryStatus()
+        +playMusic()
+        +pauseMusic()
+        +stopMusic()
+        +makeCall(phoneNumber: String)
+        +receiveCall()
+        +hangUp()
+        +openBrowser()
+        +search(query: String)
+        +closeBrowser()
+    }
+
+    class MusicPlayer {
+        +playMusic()
+        +pauseMusic()
+        +stopMusic()
+    }
+
+    class Phone {
+        +makeCall(phoneNumber: String)
+        +receiveCall()
+        +hangUp()
+    }
+
+    class WebBrowser {
+        +openBrowser()
+        +search(query: String)
+        +closeBrowser()
+    }
+
+    iPhone --> MusicPlayer : implements
+    iPhone --> Phone : implements
+    iPhone --> WebBrowser : implements
+
 ## 🛠️ Como Rodar o Projeto
 
 ### Pré-requisitos
