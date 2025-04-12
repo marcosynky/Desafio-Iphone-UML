@@ -1,41 +1,25 @@
 
 
 /**
- * Interface Phone
+ * Interface que define as funcionalidades de um telefone.
+ * A interface herda as funcionalidades de MusicPlayer e WebBrowser.
  */
-public interface Phone {
-
-    //
-    // Fields
-    //
-
-
-    //
-    // Methods
-    //
-
-
-    //
-    // Accessor methods
-    //
-
-    //
-    // Other methods
-    //
+public interface Phone extends MusicPlayer, WebBrowser {
 
     /**
+     * Realiza uma chamada telefônica para o número especificado.
+     *
+     * @param phoneNumber o número de telefone para o qual a chamada será feita.
      */
-    public void makeCall_phoneNumber_String_();
-
+    void makeCall(String phoneNumber);
 
     /**
+     * Aceita uma chamada recebida.
      */
-    public void receiveCall_();
-
+    void receiveCall();
 
     /**
+     * Encerra a chamada atual.
      */
-    public void hangUp();
-
-
+    void hangUp();
 }
