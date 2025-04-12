@@ -1,4 +1,4 @@
-<h1>Projeto Phone, Music e Web Browser - Aplicativo Java</h1>
+<h1> Desafio-Iphone, Musicplay e Web Browser </h1>
 
 <h2>📖 Sobre</h2>
 <p>Este projeto é uma simulação de funcionalidades básicas de um <strong>telefone</strong>, <strong>reprodutor de música</strong> e <strong>navegador web</strong> desenvolvida em <strong>Java</strong>. Ele permite realizar chamadas, tocar música e buscar informações na web de maneira simples e eficiente.</p>
