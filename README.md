@@ -46,8 +46,9 @@
 - Reprodução, pausa e interrupção de músicas.
 - Abertura de navegador, busca na web e fechamento do navegador.
 
-  ## Diagrama UML
-  classDiagram
+```mermaid
+
+classDiagram
     class iPhone {
         +String model
         +int batteryLevel
@@ -86,6 +87,10 @@
     iPhone --> MusicPlayer : implements
     iPhone --> Phone : implements
     iPhone --> WebBrowser : implements
+
+```
+
+
 
 ## 🛠️ Como Rodar o Projeto
 
